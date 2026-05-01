@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] JumpSettings jump;
     Rigidbody2D rb;
     public Transform groundCheck;
+    public AudioManager audioManager;
     public bool CanMove = true;
     public LayerMask groundLayer;
     float groundCheckRadius = 0.1f;
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(!wasGrounded && isGrounded)
         {
-            OnLand();
+            audioManager.OnLand();
         }
     }
 
@@ -70,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jump.jumpForce);
         }
 
-        OnJump();
+        audioManager.OnJump();
     }
     void ApplyBetterGravity()
     {
@@ -83,17 +84,6 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (jump.lowJumpMultiplier - 1) * Time.fixedDeltaTime;
         }
     }
-
-    void OnJump()
-    {
-        
-    }
-
-    void OnLand()
-    {
-        
-    }
-
     void Update()
     {
         if(!CanMove) return;
