@@ -41,8 +41,8 @@ public class LevelGate : MonoBehaviour
             {
                 Debug.Log("You need a key to open this gate!");
 
-                // if (audioManager != null)
-                    // audioManager.OnNoKey();
+                if (audioManager != null)
+                    audioManager.OnNoKey();
 
                 StartCoroutine(ShowNoKeyText());
             }
