@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TimeHealth : MonoBehaviour
 {
-    public float maxTime = 10f;
+    float maxTime = 10f;
     public float currentTime;
 
     public float drainMoving = 1f;
