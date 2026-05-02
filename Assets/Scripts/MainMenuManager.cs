@@ -11,6 +11,14 @@ using TMPro;
 
 public class MainMenuManager : MonoBehaviour
 {
+
+    public GameObject buttonsGroup;
+
+    
+    [Header("Panels")]
+    public GameObject instructionsPanel;
+
+
     [Header("Era Backgrounds")]
     public GameObject[] eraBackgrounds;
     public TextMeshProUGUI eraLabel;
@@ -56,9 +64,15 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnInstructionsButton()
     {
-        Debug.Log("Instructions button pressed");
+    instructionsPanel.SetActive(true);
+    buttonsGroup.SetActive(false);
     }
 
+    public void OnCloseButton()
+    {
+    instructionsPanel.SetActive(false);
+    buttonsGroup.SetActive(true);
+    }
     public void OnQuitButton()
     {
         Application.Quit();
