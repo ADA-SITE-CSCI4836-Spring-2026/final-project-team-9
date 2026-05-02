@@ -5,8 +5,8 @@ using Cinemachine;
 
 public class LevelGate : MonoBehaviour
 {
-    public CinemachineVirtualCamera nextLevelCam;
-    public CinemachineVirtualCamera previousLevelCam;
+    // public CinemachineVirtualCamera nextLevelCam;
+    // public CinemachineVirtualCamera previousLevelCam;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,10 +18,12 @@ public class LevelGate : MonoBehaviour
             {
                 Debug.Log("Door opened! Moving to next level.");
 
+                
+
                 inventory.hasKey = false;
 
-                nextLevelCam.Priority = 10;
-                previousLevelCam.Priority = 0;
+                // nextLevelCam.Priority = 10;
+                // previousLevelCam.Priority = 0;
 
                 GetComponent<Collider2D>().enabled = false;
             }
