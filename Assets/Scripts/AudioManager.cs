@@ -45,4 +45,12 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(loseSound);
         }
     }
+
+    public AudioClip noKeySound;
+
+    public void OnNoKey()
+    {
+    if (noKeySound != null && sfxSource != null)
+        sfxSource.PlayOneShot(noKeySound);
+    }
 }
