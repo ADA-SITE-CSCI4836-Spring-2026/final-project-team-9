@@ -23,7 +23,7 @@ public class ButtonManager : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        int currentIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentIndex + 1);
+        Debug.Log("dsskdfldskfjkd");
+        SceneManager.LoadScene("Level 2");
     }
 }

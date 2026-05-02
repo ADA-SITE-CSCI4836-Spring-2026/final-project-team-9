@@ -265,7 +265,7 @@ MonoBehaviour:
   - {fileID: 1073715587}
   cycleInterval: 3
   fadeDuration: 5
-  gameSceneName: GameUiFixing
+  gameSceneName: Game 1
   instructionsPanel: {fileID: 886996872}
   buttonsGroup: {fileID: 1305947522}
 --- !u!1 &82637146
