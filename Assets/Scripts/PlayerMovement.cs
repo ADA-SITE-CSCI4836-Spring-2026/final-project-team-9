@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     public Transform groundCheck;
     public AudioManager audioManager;
+    public TimeHealth timeHealth;
     public bool CanMove = true;
     public LayerMask groundLayer;
     float groundCheckRadius = 0.1f;
@@ -84,11 +85,18 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (jump.lowJumpMultiplier - 1) * Time.fixedDeltaTime;
         }
     }
+
+    void UpdateTime()
+    {
+        if (Mathf.Abs(moveInput) > 0.1f || !isGrounded) timeHealth.currentState = TimeHealth.PlayerState.Moving;
+        else timeHealth.currentState = TimeHealth.PlayerState.Idle;
+    }
     void Update()
     {
         if(!CanMove) return;
         HandleInput();
         CheckGround();
+        UpdateTime();
     }
 
     void FixedUpdate()
