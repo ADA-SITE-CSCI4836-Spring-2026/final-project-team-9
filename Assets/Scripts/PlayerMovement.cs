@@ -29,10 +29,12 @@ public class PlayerMovement : MonoBehaviour
     float moveInput;
     bool isGrounded;
     bool jumpPressed;
+    private Animator anim;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void HandleInput()
@@ -96,6 +98,17 @@ public class PlayerMovement : MonoBehaviour
         if(!CanMove) return;
         HandleInput();
         CheckGround();
+
+        //Turn right/left animations
+
+        if (moveInput < -0.01f)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (moveInput > 0.01f)
+            transform.localScale = Vector3.one;
+
+        //Set animator parameters
+        anim.SetBool("Run", Mathf.Abs(moveInput) > 0.01f);
+        anim.SetBool("grounded", isGrounded);
         UpdateTime();
     }
 
