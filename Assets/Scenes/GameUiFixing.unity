@@ -3600,6 +3600,7 @@ MonoBehaviour:
     lowJumpMultiplier: 2
   groundCheck: {fileID: 1168689834}
   audioManager: {fileID: 1286890989}
+  timeHealth: {fileID: 0}
   CanMove: 1
   groundLayer:
     serializedVersion: 2
