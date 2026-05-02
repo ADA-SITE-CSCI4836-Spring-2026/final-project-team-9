@@ -245,8 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bd00a0d12484f4383ef6873800f0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonsGroup: {fileID: 1305947522}
-  instructionsPanel: {fileID: 886996872}
   eraBackgrounds:
   - {fileID: 869176867}
   - {fileID: 23237585}
@@ -261,9 +259,15 @@ MonoBehaviour:
   - Age of Stone
   - Age of Kingdoms
   - Age of Stars
+  menuButtons:
+  - {fileID: 704434093}
+  - {fileID: 82637149}
+  - {fileID: 1073715587}
   cycleInterval: 3
   fadeDuration: 5
-  gameSceneName: Level_01
+  gameSceneName: GameUiFixing
+  instructionsPanel: {fileID: 886996872}
+  buttonsGroup: {fileID: 1305947522}
 --- !u!1 &82637146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9607843, g: 0.78431374, b: 0.25882354, a: 1}
+  m_Color: {r: 0.3647059, g: 0.7921569, b: 0.64705884, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
