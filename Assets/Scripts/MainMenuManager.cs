@@ -28,7 +28,7 @@ public class MainMenuManager : MonoBehaviour
     public float fadeDuration  = 1.0f;
 
     [Header("Scene Names")]
-    public string gameSceneName = "Level_01";
+    public string gameSceneName = "Game 1";
 
     [Header("Panels")]
     public GameObject instructionsPanel;

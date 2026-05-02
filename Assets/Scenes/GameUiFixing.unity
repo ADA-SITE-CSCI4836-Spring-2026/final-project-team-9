@@ -2599,7 +2599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1254634411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2919,6 +2919,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d3a7b79958b2f44b0840fb1e53c877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSource: {fileID: 0}
+  jumpSound: {fileID: 0}
+  landSound: {fileID: 0}
+  winSound: {fileID: 0}
+  loseSound: {fileID: 0}
 --- !u!4 &1286890990
 Transform:
   m_ObjectHideFlags: 0
