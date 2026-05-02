@@ -20,12 +20,27 @@ public class MainMenuManager : MonoBehaviour
     public string[] eraLabels = { "Prehistoric", "Medieval", "Futuristic" };
     public string[] eraNames  = { "Age of Stone", "Age of Kingdoms", "Age of Stars" };
 
+    [Header("Buttons")]
+    public Image[] menuButtons;  // drag Play, Instructions, Quit buttons here
+
     [Header("Auto Cycle")]
     public float cycleInterval = 3.5f;
     public float fadeDuration  = 1.0f;
 
     [Header("Scene Names")]
     public string gameSceneName = "Level_01";
+
+    [Header("Panels")]
+    public GameObject instructionsPanel;
+    public GameObject buttonsGroup;
+
+    // era button colors
+    private Color[] eraButtonColors = new Color[]
+    {
+        new Color(0.176f, 0.478f, 0.227f, 1f),  // Forest green  #2D7A3A
+        new Color(0.961f, 0.784f, 0.259f, 1f),  // Desert gold   #F5C842
+        new Color(0.290f, 0.565f, 0.769f, 1f),  // Ice blue      #4A90C4
+    };
 
     private int      currentEra = 0;
     private bool     isFading   = false;
@@ -56,7 +71,14 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnInstructionsButton()
     {
-        Debug.Log("Instructions button pressed");
+        instructionsPanel.SetActive(true);
+        buttonsGroup.SetActive(false);
+    }
+
+    public void OnCloseButton()
+    {
+        instructionsPanel.SetActive(false);
+        buttonsGroup.SetActive(true);
     }
 
     public void OnQuitButton()
@@ -121,6 +143,17 @@ public class MainMenuManager : MonoBehaviour
     {
         if (eraLabel) eraLabel.text = eraLabels[currentEra];
         if (eraName)  eraName.text  = eraNames[currentEra];
+        UpdateButtonColors();
+    }
+
+    void UpdateButtonColors()
+    {
+        if (menuButtons == null) return;
+        foreach (Image btn in menuButtons)
+        {
+            if (btn != null)
+                btn.color = eraButtonColors[currentEra];
+        }
     }
 
     CanvasGroup GetOrAddCanvasGroup(GameObject go)

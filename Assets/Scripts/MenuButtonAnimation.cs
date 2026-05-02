@@ -95,7 +95,7 @@ public class MenuButtonAnimation : MonoBehaviour,
 
         while (elapsed < shineDuration)
         {
-            elapsed += Time.deltaTime;
+            elapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(elapsed / shineDuration);
             float x = Mathf.Lerp(startX, endX, t);
             shinRT.anchoredPosition = new Vector2(x, 0f);
@@ -129,7 +129,7 @@ public class MenuButtonAnimation : MonoBehaviour,
 
         while (elapsed < duration)
         {
-            elapsed += Time.deltaTime;
+            elapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
             // smooth step for a snappier feel
             t = t * t * (3f - 2f * t);
